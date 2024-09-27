@@ -1,4 +1,18 @@
-size_t  strlcat(char * restrict dst, const char * restrict src, size_t dstsize)
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/09/27 19:49:52 by hlichten          #+#    #+#             */
+/*   Updated: 2024/09/27 22:56:49 by hlichten         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "libft.h"
+
+size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
     unsigned int    i;
     unsigned int    j;

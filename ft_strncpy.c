@@ -6,11 +6,13 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:29:14 by hlichten          #+#    #+#             */
-/*   Updated: 2024/09/27 18:17:27 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/09/27 22:59:16 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-char *strncpy(char *dst, const char *src, size_t len)
+#include "libft.h"
+
+char *ft_strncpy(char *dst, const char *src, size_t len)
 {
 	int	i;
 
