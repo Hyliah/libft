@@ -6,7 +6,7 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 21:27:58 by hlichten          #+#    #+#             */
-/*   Updated: 2024/09/27 22:39:37 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/08 18:44:09 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@ int ft_isdigit(int c)
 {
     if (c >= 48 && c <= 57)
         return (1);
-    return (0);   
+    return (0);
 }
 /*
 #include <ctype.h>

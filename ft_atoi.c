@@ -6,7 +6,7 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 22:16:35 by hlichten          #+#    #+#             */
-/*   Updated: 2024/09/27 22:33:32 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:43:50 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,14 +19,11 @@ int ft_atoi(const char *str)
     i = 0;
     nb = 0;
     neg = 1;
-    if (str[i] == '\n' || str[i] == '\f' || str[i] == '\t' || str[i] == 32 || str[i] == '\r')
-        {
-            while (str[i] == '\n' || str[i] == '\f' || str[i] == '\t' || str[i] == 32 || str[i] == '\r')
-            i++;
-        }
-    if (str[i] == 41 || str[i] == 43)
+    while (str[i] == ' ' || (str[i] >= '\t' && str[i] <= '\r'))
+        i++;
+    if (str[i] == 45 || str[i] == 43)
     {
-        if (str[i] == 41)
+        if (str[i] == '-')
         {
             neg = -neg;
         }
@@ -39,14 +36,14 @@ int ft_atoi(const char *str)
     }
     return (nb * neg);
 }
-/*
-#include <stdio.h>
-#include <stdlib.h>
-int main(int ac, char **av)
-{
-    (void)ac;
-    printf("%d \n", atoi(av[1]));
-    printf("%d \n", ft_atoi(av[1]));
+
+// #include <stdio.h>
+// #include <stdlib.h>
+// int main(int ac, char **av)
+// {
+//     (void)ac;
+//     printf("%d \n", atoi(av[1]));
+//     printf("%d \n", ft_atoi(av[1]));
  
-    return 0;
-}*/
+//     return 0;
+// }

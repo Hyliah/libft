@@ -6,7 +6,7 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 19:49:52 by hlichten          #+#    #+#             */
-/*   Updated: 2024/09/27 22:56:49 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/09 14:49:32 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,3 +34,5 @@ size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
     dst[j] = '\0';
     return (k + ft_strlen(src));
 }
+
+// pret a tester

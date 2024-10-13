@@ -6,7 +6,7 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 20:20:20 by hlichten          #+#    #+#             */
-/*   Updated: 2024/09/27 20:21:45 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/08 16:48:14 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,3 +19,5 @@ int	ft_strlen(char *str)
 		i++;
 	return (i);
 }
+
+// pret à tester

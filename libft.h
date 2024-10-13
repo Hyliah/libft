@@ -6,27 +6,35 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 22:44:28 by hlichten          #+#    #+#             */
-/*   Updated: 2024/09/28 01:04:49 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/09 17:51:03 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
-//# define size_t unsigned int //temporaire
 
-#include <stdlib.h>
-#include <unistd.h>
+#include <stdlib.h> //pour malloc
+#include <unistd.h> //pour write
+//#include <stddef.h> // pour le size_t
 
-int     ft_atoi(const char *str);
-int     ft_isalnum(int c);
 int     ft_isalpha(int c);
-int     ft_isascii(int c);
 int     ft_isdigit(int c);
+int     ft_isalnum(int c);
+int     ft_isascii(int c);
 int     ft_isprint(int c);
-char	*ft_strcpy(char *dst, const char *src);
-char	*ft_strdup(const char *s1);
-size_t  ft_strlcat(char *dst, const char *src, size_t dstsize);
+int     ft_toupper(int c);
+int     ft_tolower(int c);
 int	    ft_strlen(char *str);
-char    *ft_strncpy(char *dst, const char *src, size_t len);
+int     ft_atoi(const char *str);
+void    ft_bzero(void *s, size_t n);
+void    *ft_memset(void *b, int c, size_t len);
+void    *ft_memchr(const void *s, int c, size_t n);
+void    *ft_memmove(void *dst, const void *src, size_t len);
+int     ft_memcmp(const void *s1, const void *s2, size_t n);
+size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
+size_t  ft_strlcat(char *dst, const char *src, size_t dstsize);
+void    *ft_memcpy(void *restrict dst, const void *restrict src, size_t n);
+
+
 
 #endif

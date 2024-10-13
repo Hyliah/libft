@@ -6,7 +6,7 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 21:34:08 by hlichten          #+#    #+#             */
-/*   Updated: 2024/09/27 22:41:24 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/09 18:11:54 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@ int ft_isprint(int c)
         return (1);
     return (0);
 }
+
 /*
 #include <ctype.h>
 #include <stdio.h>
