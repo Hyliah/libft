@@ -30,13 +30,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return(srcsize);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main(int ac, char **av)
-{
-    (void)ac;
-    printf("%lu \n",strlcpy(av[1], av[2], atoi(av[3])));
-    printf("%lu \n",ft_strlcpy(av[1], av[2], atoi(av[3])));
-}
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main(int ac, char **av)
+// {
+//     (void)ac;
+//     printf("%lu \n",strlcpy(av[1], av[2], atoi(av[3])));
+//     printf("%lu \n",ft_strlcpy(av[4], av[5], atoi(av[6])));
+// }
 

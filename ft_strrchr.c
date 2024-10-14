@@ -26,12 +26,12 @@ char    *ft_strrchr(const char *s, int c)
     return (NULL);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main(int ac, char **av)
-{
-    (void)ac;
-    printf("%s \n",strrchr(av[1], av[2][0]));
-    printf("%s \n",ft_strrchr(av[1], av[2][0]));
-}
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main(int ac, char **av)
+// {
+//     (void)ac;
+//     printf("%s \n",strrchr(av[1], av[2][0]));
+//     printf("%s \n",ft_strrchr(av[1], av[2][0]));
+// }

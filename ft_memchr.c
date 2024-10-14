@@ -10,34 +10,28 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h" //demander à Hermes ou Tristan le BG
+#include "libft.h"
 
 void    *ft_memchr(const void *s, int c, size_t n)
 {
-    const char  *str;
+    char  *str;
     size_t      i;
     
     str = (char *)s;
     i = 0;
     while (str[i] && str[i] != (char)c && i < n)
         ++i;
-    if (!*str && c)
-        return (NULL);
-    return((void *)str);
+    if (str[i] == (char)c)
+        return ((void *)&str[i]);
+    return(NULL);
 }
 
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main(int ac, char **av)
-{
-     (void)ac;
-     printf("%\n", memchr(av[1], av[2][0], atoi(av[3])));
-     printf("%\n", ft_memchr(av[1], av[2][0], atoi(av[3])));
-}
-
-//  DESCRIPTION
-//  The memchr() function locates the first occurrence of c (converted to an unsigned char) in string s.
-
-// RETURN VALUES
-// The memchr() function returns a pointer to the byte located, or NULL if no such byte exists within n bytes.
+// #include <stdio.h>
+// #include <stdlib.h>
+// #include <string.h>
+// int main(int ac, char **av)
+// {
+//      (void)ac;
+//      printf("%s\n", memchr(av[1], av[2][0], atoi(av[3])));
+//      printf("%s\n", ft_memchr(av[1], av[2][0], atoi(av[3])));
+// }

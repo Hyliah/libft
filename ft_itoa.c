@@ -12,19 +12,19 @@
 
 #include "libft.h"
 
-void    ft_putnbr(unsigned int n, char *array)
+static void    ft_putnbr(unsigned int n, char *array, int i)
 {
     if (n > 9)
-        ft_putnbr(n / 10, array - 1);
-    *array = (n % 10) + '0'; // -1 pour qu il commence à index -1. 
+        ft_putnbr(n / 10, array, i - 1);
+    array[i - 1] = (n % 10) + '0';
 }
 
-int ft_nblen(int nbr)
+static int ft_nblen(int nbr)
 {
-    unsigned int    n;
-    int             len;
+    unsigned int n;
+    int len;
 
-    len = 0;
+    len = 1;
     if (nbr < 0)
     {
         n = nbr * -1;
@@ -32,13 +32,11 @@ int ft_nblen(int nbr)
     }
     else 
         n = nbr;
-
     while (n > 9)
     {
         n /= 10;
         len ++;
     }
-    len++;
     return (len);
 }
 
@@ -46,6 +44,7 @@ char    *ft_itoa(int nbr)
 {
     char    *str;
     int     len;
+    unsigned int    n;
 
     len = ft_nblen(nbr);
 
@@ -53,9 +52,14 @@ char    *ft_itoa(int nbr)
     if (!str)
         return (NULL);
     if (nbr < 0)
+    {
+        n = nbr * -1;
         str[0] = '-';
+    }
+    else
+        n = nbr;
     str[len] = 0;
-    ft_putnbr((unsigned int)nbr, str + len - 1);
+    ft_putnbr(n, str, len);
     return (str);
 }
 
@@ -67,21 +71,6 @@ int main(int ac, char **av)
     (void)av;
     char *tmp;
 
-    tmp = ft_itoa(-65);
-    printf("%s\n", tmp);
-    free(tmp);
-    tmp = ft_itoa(65);
-    printf("%s\n", tmp);
-    free(tmp);
-    tmp = ft_itoa(120);
-    printf("%s\n", tmp);
-    free(tmp);
-    tmp = ft_itoa(-180);
-    printf("%s\n", tmp);
-    free(tmp);
-    tmp = ft_itoa(0x7FFFFFFF);
-    printf("%s\n", tmp);
-    free(tmp);
     tmp = ft_itoa(-0x80000000);
     printf("%s\n", tmp);
     free(tmp);

@@ -21,19 +21,17 @@ void    ft_bzero(void *s, size_t n)
         *(c++) = 0;
 }
 
-#include <stdlib.h>
-#include <stdio.h>
-#include <string.h>
-int main()
-{
-    char str[100] = "Hello";
-    char str2[100] = "Hello";
+// #include <stdlib.h>
+// #include <stdio.h>
+// #include <string.h>
+// int main()
+// {
+//     char str[100] = "Hello";
+//     char str2[100] = "Hello";
 
-    ft_bzero(str+2, 45);
-    bzero(str2+2, 45);
-    printf("%s\n", str);
-     printf("%s\n", str2);
-    return 0;
- }
-
-/* The bzero() function writes n zeroed bytes to the string s.  If n is zero, bzero() does nothing.*/
+//     ft_bzero(str+2, 45);
+//     bzero(str2+2, 45);
+//     printf("%s\n", str);
+//      printf("%s\n", str2);
+//     return 0;
+//  }
