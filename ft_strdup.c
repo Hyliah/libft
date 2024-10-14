@@ -1,37 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strrchr.c                                       :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/10/09 16:00:35 by hlichten          #+#    #+#             */
-/*   Updated: 2024/10/13 17:17:48 by hlichten         ###   ########.fr       */
+/*   Created: 2024/10/13 20:03:10 by hlichten          #+#    #+#             */
+/*   Updated: 2024/10/13 20:47:46 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char    *ft_strrchr(const char *s, int c)
+char *ft_strdup(const char *s1)
 {
-    int i;
+    char    *str;
+    int     len;
 
-    i = ft_strlen((char *)s);
-    while (i >= 0)
-    {
-        if (s[i] == ((char)c))
-            return ((char *)(s + i));
-        --i;
-    }
-    return (NULL);
-}
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-int main(int ac, char **av)
-{
-    (void)ac;
-    printf("%s \n",strrchr(av[1], av[2][0]));
-    printf("%s \n",ft_strrchr(av[1], av[2][0]));
+    len = ft_strlen(s1);
+    str = (char *)malloc(sizeof(char) * (len + 1));
+    
+    if (!str)
+        return (NULL);
+    
+    return (str);
 }

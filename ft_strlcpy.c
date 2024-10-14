@@ -6,7 +6,7 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:29:14 by hlichten          #+#    #+#             */
-/*   Updated: 2024/10/08 18:44:50 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/13 21:02:10 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,14 +14,14 @@
 
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 {
-	int	i;
-	int	srcsize;
+	size_t	i;
+	int		srcsize;
 
 	if (!dst || !src)
 		return (0);
-	srcsize = ft_strlen(src);
+	srcsize = ft_strlen((char*)src);
 	i = 0;
-	while(src[i] && i < (dstsize -1))
+	while (src[i] && i < (dstsize - 1))
 	{
 		dst[i] = src[i];
 		i++;
@@ -30,5 +30,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 	return(srcsize);
 }
 
-// a tester
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+int main(int ac, char **av)
+{
+    (void)ac;
+    printf("%lu \n",strlcpy(av[1], av[2], atoi(av[3])));
+    printf("%lu \n",ft_strlcpy(av[1], av[2], atoi(av[3])));
+}
 

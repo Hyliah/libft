@@ -2,8 +2,10 @@
 triple:          'arm64-apple-darwin'
 binary-path:     a.out
 relocations:
-  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _ft_strncmp, symObjAddr: 0x0, symBinAddr: 0x100003768, symSize: 0x374 }
-  - { offsetInCU: 0x3B, offset: 0x3B, size: 0x8, addend: 0x0, symName: _.str, symObjAddr: 0x640, symBinAddr: 0x100003E20, symSize: 0x0 }
-  - { offsetInCU: 0x65, offset: 0x65, size: 0x8, addend: 0x0, symName: _ft_strncmp, symObjAddr: 0x0, symBinAddr: 0x100003768, symSize: 0x374 }
-  - { offsetInCU: 0xB7, offset: 0xB7, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x374, symBinAddr: 0x100003ADC, symSize: 0x22C }
+  - { offsetInCU: 0x26, offset: 0x26, size: 0x8, addend: 0x0, symName: _ft_strlcpy, symObjAddr: 0x0, symBinAddr: 0x1000036F0, symSize: 0x290 }
+  - { offsetInCU: 0x3B, offset: 0x3B, size: 0x8, addend: 0x0, symName: _.str, symObjAddr: 0x560, symBinAddr: 0x100003DA0, symSize: 0x0 }
+  - { offsetInCU: 0x63, offset: 0x63, size: 0x8, addend: 0x0, symName: _ft_strlcpy, symObjAddr: 0x0, symBinAddr: 0x1000036F0, symSize: 0x290 }
+  - { offsetInCU: 0xC3, offset: 0xC3, size: 0x8, addend: 0x0, symName: _main, symObjAddr: 0x290, symBinAddr: 0x100003980, symSize: 0x220 }
+  - { offsetInCU: 0x26, offset: 0x152, size: 0x8, addend: 0x0, symName: _ft_strlen, symObjAddr: 0x0, symBinAddr: 0x100003C38, symSize: 0xC0 }
+  - { offsetInCU: 0x33, offset: 0x15F, size: 0x8, addend: 0x0, symName: _ft_strlen, symObjAddr: 0x0, symBinAddr: 0x100003C38, symSize: 0xC0 }
 ...
