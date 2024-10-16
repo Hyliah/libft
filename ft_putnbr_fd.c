@@ -1,38 +1,45 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/09/27 19:49:52 by hlichten          #+#    #+#             */
-/*   Updated: 2024/10/16 21:10:15 by hlichten         ###   ########.fr       */
+/*   Created: 2024/10/16 21:05:55 by hlichten          #+#    #+#             */
+/*   Updated: 2024/10/16 21:44:38 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
+void    ft_putnbr_fd(int n, int fd)
 {
-    unsigned int    i;
-    unsigned int    j;
-    unsigned int    k;
+    char    c;
 
-    k = 0;
-    while (dest(k) && k < dstsize)
-        k++;
-    if (dstsize <= k)
-        return (dstsize + ft_strlen(src));
-    i = 0;
-    j = k;
-    while (src[i] && j < dstsize -1)
+    if (n == -2147483648)
     {
-        dst[j] = src[i];
-        i++;
-        j++;   
+        write(fd, "-2147483648", 11);
+        return;
     }
-    dst[j] = '\0';
-    return (k + ft_strlen(src));
+    if (n < 0)
+    {
+        write(1, "-", 1);
+        n = n * -1;
+    }
+    if (n >= 10)
+    {
+        ft_putnbr_fd(n / 10, fd);
+        ft_putnbr_fd(n % 10, fd);
+    }
+    if (n < 10)
+    {
+        c = n + 48;
+        write(1, &c, 1);
+    }
 }
 
-// pret a tester
+// int main(void)
+// {
+// ft_putnbr_fd(-42320, 1);
+// return(0);
+// }
