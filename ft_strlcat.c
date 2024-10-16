@@ -19,10 +19,10 @@ size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
     unsigned int    k;
 
     k = 0;
-    while (dest(k) && k < dstsize)
+    while (dst[k] && k < dstsize)
         k++;
     if (dstsize <= k)
-        return (dstsize + ft_strlen(src));
+        return (dstsize + ft_strlen((char*) src));
     i = 0;
     j = k;
     while (src[i] && j < dstsize -1)
@@ -32,7 +32,16 @@ size_t  ft_strlcat(char *dst, const char *src, size_t dstsize)
         j++;   
     }
     dst[j] = '\0';
-    return (k + ft_strlen(src));
+    return (k + ft_strlen((char*) src));
 }
 
-// pret a tester
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include <bsd/string.h>
+int main(int ac, char **av)
+{
+    (void)ac;
+    printf("%lu \n", strlcat(av[1], av[2], atoi(av[3])));
+    printf("%lu \n", ft_strlcat(av[4], av[5], atoi(av[6])));
+}
