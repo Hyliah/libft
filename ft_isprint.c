@@ -6,15 +6,15 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 21:34:08 by hlichten          #+#    #+#             */
-/*   Updated: 2024/10/09 18:11:54 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/19 18:44:17 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_isprint(int c)
+int	ft_isprint(int c)
 {
-    if (c >= 32 && c <= 127)
-        return (1);
-    return (0);
+	if (c >= 32 && c <= 127)
+		return (1);
+	return (0);
 }
 
 /*

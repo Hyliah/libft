@@ -39,4 +39,3 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 //     printf("%lu \n",strlcpy(av[1], av[2], atoi(av[3])));
 //     printf("%lu \n",ft_strlcpy(av[4], av[5], atoi(av[6])));
 // }
-

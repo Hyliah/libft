@@ -6,19 +6,15 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:33:46 by hlichten          #+#    #+#             */
-/*   Updated: 2024/10/13 20:22:27 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/19 18:37:03 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void    ft_bzero(void *s, size_t n)
+void	ft_bzero(void *s, size_t n)
 {
-    unsigned char   *c;
-    
-    c = (unsigned char*)s;
-    while (n-- > 0)
-        *(c++) = 0;
+	ft_memset(s, 0, n);
 }
 
 // #include <stdlib.h>
@@ -28,7 +24,6 @@ void    ft_bzero(void *s, size_t n)
 // {
 //     char str[100] = "Hello";
 //     char str2[100] = "Hello";
-
 //     ft_bzero(str+2, 45);
 //     bzero(str2+2, 45);
 //     printf("%s\n", str);

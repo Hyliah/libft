@@ -6,15 +6,15 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:23:22 by hlichten          #+#    #+#             */
-/*   Updated: 2024/10/08 18:43:01 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/19 19:03:31 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-int ft_tolower(int c)
+int	ft_tolower(int c)
 {
-    if (c >= 'A' && c <= 'Z')
-        return (c += 32);
-    return (c);
+	if (c >= 'A' && c <= 'Z')
+		return (c += 32);
+	return (c);
 }
 /*
 #include <ctype.h>

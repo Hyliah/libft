@@ -6,32 +6,30 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/28 17:39:30 by hlichten          #+#    #+#             */
-/*   Updated: 2024/10/09 17:53:08 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/19 18:53:16 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int    ft_memcmp(const void *s1, const void *s2, size_t n)
+int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {
-    const char  *str1;
-    const char  *str2;
-    int         i;
+	const char	*str1;
+	const char	*str2;
+	int			i;
 
-    i = 0;
-    str1 = (const char *)s1;
-    str2 = (const char *)s2;
-
-    while (i < n)
-    {
-        if (str1[i] == str2[i])
-            i++;
-        else 
-            return (str1[i] - str2[i]);
-    }    
-    return (0);
+	i = 0;
+	str1 = (const char *)s1;
+	str2 = (const char *)s2;
+	while (i < n)
+	{
+		if (str1[i] == str2[i])
+			i++;
+		else
+			return (str1[i] - str2[i]);
+	}
+	return (0);
 }
-
 // #include <stdio.h>
 // #include <stdlib.h>
 // #include <string.h>
