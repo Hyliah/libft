@@ -16,3 +16,12 @@ void    ft_putstr_fd(char *s, int fd)
 {
     write(fd, &s, ft_strlen(s));
 }
+
+void    ft_putstr(char *s, int fd)
+{
+    int i;
+
+    i = -1
+    while (str[++i])
+        write(fd, &str[i], 1);
+}
