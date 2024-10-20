@@ -60,8 +60,9 @@ char	*create_word(const char *s, char c)
 {
 	char	*str;
 	int		i;
-    
+
 	i = 0;
+	(void)s;
 	str = (char *)malloc((sizeof (char)) * (word_len(s, c) + 1));
 	if (!str)
 		return (NULL);
@@ -69,7 +70,7 @@ char	*create_word(const char *s, char c)
 	{
 		str[i] = *s;
 		i++;
-		*s++;
+		s++;
 	}
 	str[i] = '\0';
 	return (str);
@@ -90,14 +91,13 @@ char	**ft_split(char const *s, char c)
 	while (*s)
 	{
 		while (*s && *s == c)
-			*s++;
+			s++;
 		if (*s && *s != c)
 		{
 			tmp = create_word(s, c);
 			if (!tmp)
 				return (ft_free(strs, &i));
-			strs[i] = tmp;
-			i++;
+			strs[i++] = tmp;
 			s += ft_strlen(tmp);
 		}
 	}
