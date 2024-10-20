@@ -6,7 +6,7 @@
 /*   By: hlichten <marvin@42lausanne.ch>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/09/27 17:29:14 by hlichten          #+#    #+#             */
-/*   Updated: 2024/10/16 21:10:16 by hlichten         ###   ########.fr       */
+/*   Updated: 2024/10/20 18:31:06 by hlichten         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 
 	if (!dst || !src)
 		return (0);
-	srcsize = ft_strlen((char*)src);
+	srcsize = ft_strlen((char *)src);
 	i = 0;
 	while (src[i] && i < (dstsize - 1))
 	{
@@ -27,7 +27,7 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize)
 		i++;
 	}
 	dst[i] = '\0';
-	return(srcsize);
+	return (srcsize);
 }
 
 // #include <stdio.h>
