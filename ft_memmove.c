@@ -16,30 +16,36 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char		*d;
 	const char	*s;
-	size_t		i;
 
+	if (!dst && !src)
+		return (NULL);
 	d = (char *)dst;
 	s = (const char *)src;
-	i = 0;
 	if (src > dst)
 		return (ft_memcpy(dst, src, len));
 	if (src < dst)
 	{
-		while (0 < len)
+		while (len > 0)
 		{
-			d[i] = s[i];
 			len--;
+			d[len] = s[len];
 		}
 	}
 	return (dst);
 }
+
 // #include <stdio.h>
 // #include <stdlib.h>
 // #include <string.h>
 // int main(int ac, char **av)
 // {
 //     (void)ac;
-//     printf("%s\n", (char *)memmove(av[1], av[2], atoi(av[3])));
-//     printf("%s\n", (char *)ft_memmove(av[4], av[5], atoi(av[6])));
-//     return (0);
+// 	(void)av;
+// 	char data[] = "1234567890";
+// 	char data1[] = "1234567890";
+//     memmove(data + 2, data + 2, 5);
+// 	ft_memmove(data1 + 2, data1 + 2, 5);
+//     printf("Résultat avec memmove: %s\n", data);
+// 	printf("Résultat avec ft_memmove: %s\n", data1);
+// 	return (0);
 // }

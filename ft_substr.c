@@ -14,27 +14,51 @@
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
-	unsigned int	i;
-	unsigned int	j;
-	char			*str;
+	size_t	i;
+	char	*str;
 
-	i = 0;
-	j = 0;
+	if (!s)
+		return (NULL);
+	i = ft_strlen((char *)s);
+	if (start >= i)
+		return (ft_strdup(""));
+	if (start + len > i)
+		len = i - start;
 	str = (char *)malloc(sizeof(char) * (len + 1));
 	if (!str)
 		return (NULL);
-	while (i < start)
-		i++;
-	while (j < len && s[i])
-	{
-		str[j] = s[i];
-		i++;
-		j++;
-	}
-	str[j] = '\0';
+	ft_strlcpy(str, s + start, len +1);
 	return (str);
 }
 
+// char	*ft_substr(char const *s, unsigned int start, size_t len)
+// {
+// 	unsigned int	i;
+// 	unsigned int	j;
+// 	char			*str;
+
+// 	i = 0;
+// 	j = 0;
+// 	if (!s)
+// 		return (NULL);
+// 	if (!s[0] || (size_t)ft_strlen(s) < start)
+// 		len = 0;
+// 	else if ((size_t)ft_strlen(s + start) < len)
+// 		len = ft_strlen(s + start);
+// 	str = (char *)malloc(sizeof(char) * (len + 1));
+// 	if (!str)
+// 		return (NULL);
+// 	while (i < start)
+// 		i++;
+// 	while (j < len && s[i])
+// 	{
+// 		str[j] = s[i];
+// 		i++;
+// 		j++;
+// 	}
+// 	str[j] = '\0';
+// 	return (str);
+// }
 // #include <stdio.h>
 // #include <stdlib.h>
 // int main(int ac, char **av)
