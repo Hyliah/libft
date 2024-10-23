@@ -10,27 +10,31 @@ SRCS= ft_isdigit.c ft_putstr_fd.c ft_strncmp.c ft_putendl_fd.c \
 	ft_putchar_fd.c ft_strlcpy.c ft_isalpha.c \
 	ft_strlen.c ft_isascii.c ft_strmapi.c ft_strlcat.c ft_isalnum.c ft_atoi.c
 
-OBJDIR= ./obj/
-
-BONUS= ft_lstadd_back.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
+B_SRCS = ft_lstadd_back.c ft_lstclear.c ft_lstiter.c ft_lstmap.c \
 	ft_lstsize.c ft_lstadd_front.c ft_lstdelone.c ft_lstlast.c \
 	ft_lstnew.c
 
-all: $(NAME)
+OBJDIR= ./obj/
+
+
 
 OBJS = ${SRCS:%.c=${OBJDIR}%.o}
-OBJS_BONUS = ${BONUS:%.c=${OBJDIR}%.o}
+OBJS_BONUS = ${B_SRCS:%.c=${OBJDIR}%.o}
 
-bonus: $(OBJ_BONUS) all
+all: $(NAME)
 
 ${OBJDIR}%.o: %.c
 	@mkdir -p ${OBJDIR}
 	@printf "Compiling %s\n" $<
 	@gcc -c $(CFLAGS) $< -o $@
 
+bonus: $(OBJS_BONUS)
+	@printf "making bonus\n"
+	@ar -rcs $(NAME) $(OBJS_BONUS)
+
 $(NAME): $(OBJS)
-	@printf "\n"
-	ar -rcs $(NAME) $(OBJS)
+	@printf "Compiled library\n"
+	@ar -rcs $(NAME) $(OBJS)
 
 re: fclean all
 
@@ -46,4 +50,4 @@ so:
 	gcc -nostartfiles -fPIC $(CFLAGS) -c $(SRCS)
 	gcc -nostartfiles -shared -o libft.so $(OBJS)
 
-.PHONY: clean fclean re all
+.PHONY: clean fclean re all bonus

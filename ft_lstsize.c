@@ -14,4 +14,18 @@
 
 int	ft_lstsize(t_list *lst)
 {
+	int	size;
+
+	size = 0;
+	while (lst != NULL)
+	{
+		lst = lst->next;
+		size++;
+	}
+	return (size);
 }
+// typedef struct 	s_list
+// {
+// void 			*content;
+// struct s_list 	*next;
+// } 				t_list;

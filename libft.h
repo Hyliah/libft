@@ -16,11 +16,11 @@
 # include <stdlib.h> //pour malloc
 # include <unistd.h> //pour write
 
-typedef struct		s_list
+typedef struct s_list
 {
-	void 			*content;
-	struct s_list 	*next;
-} 					t_list;
+	void			*content;
+	struct s_list	*next;
+}	t_list;
 
 char	*ft_itoa(int n);
 int		ft_isalpha(int c);
